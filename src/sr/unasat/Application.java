@@ -1,6 +1,19 @@
 package sr.unasat;
 
+
+
+
+import java.util.List;
+
+
+import static sr.unasat.search.BreathFirstSearch.BFS;
+
+import static sr.unasat.search.DeptFirstSearch.DFS;
+
 public class Application {
+
+    private boolean isDirected;
+
 
     public static void main(String[] args) {
         Graph graph = new Graph(true);
@@ -41,7 +54,7 @@ public class Application {
 
 
         graph.printGraph();
-/*
+
         System.out.println("Check if following vertices are connected");
         if(graph.isConnected(vertexA, vertexB))
             System.out.println("BOG and RGD Meerzorg are connected...");
@@ -60,14 +73,21 @@ public class Application {
             System.out.println(ver);
         }
 
-*/
+
 //
 
         System.out.println("Output of Depth First Search using Non-Recursive DFS");
-        DFS(graph, new Vertex("C", "HIGHWAY"));
+         DFS(graph, new Vertex("C", "HIGHWAY"));
+
+
         System.out.println("");
+
+
         System.out.println("Output of Breadth First Search: ");
-        BFS(graph, new Vertex("C", "HIGHWAY")); //Output: A B F E
+        //Output: A B F E
+      BFS(graph, new Vertex("C", "HIGHWAY"));
+
+
 
 
 

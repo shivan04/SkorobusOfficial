@@ -10,6 +10,9 @@ import static sr.unasat.search.BreathFirstSearch.BFS;
 
 import static sr.unasat.search.DeptFirstSearch.DFS;
 
+import jdk.swing.interop.SwingInterOpUtils;
+import sr.unasat.Register.*;
+
 public class Application {
 
     private boolean isDirected;
@@ -49,22 +52,24 @@ public class Application {
         graph.addEdge(vertexC, vertexE, graph.isDirected);
 
 
-
-
-
+// SOUT BEGINT VAN AF HIER !!!!!
 
         graph.printGraph();
 
-        System.out.println("Check if following vertices are connected");
+
+
+/*
+       System.out.println("Check if following vertices are connected");
         if(graph.isConnected(vertexA, vertexB))
-            System.out.println("BOG and RGD Meerzorg are connected...");
+            System.out.println(vertexA+" and "+vertexB+" Are connected");
         else
-            System.out.println("BOG and RGD Meerzorg are NOT connected.");
+            System.out.println(vertexA+" and "+vertexB+" Are not connected");
 
         if(graph.isConnected(vertexA, vertexC))
-            System.out.println("BOG and RGD Limesgracht are connected...");
+            System.out.println(vertexA+" and "+vertexC+" Are connected");
         else
-            System.out.println("BOG and RGD Limesgracht are NOT connected.");
+         //   System.out.println("PARANAM and HIGHWAY  are NOT connected.");
+        System.out.println(vertexA+" and "+vertexC+" Are not connected");
 
         //Call getAdjacentVertex() to get neighboring nodes
         List<Vertex> temp = graph.getAdjacentVertex(new Vertex("A", "BOG"));
@@ -72,6 +77,10 @@ public class Application {
         for(Vertex ver : temp) {
             System.out.println(ver);
         }
+
+ */
+
+
 
 
 //
@@ -81,11 +90,13 @@ public class Application {
 
 
         System.out.println("");
+        System.out.println("");
 
 
         System.out.println("Output of Breadth First Search: ");
         //Output: A B F E
       BFS(graph, new Vertex("C", "HIGHWAY"));
+        System.out.println();
 
 
 

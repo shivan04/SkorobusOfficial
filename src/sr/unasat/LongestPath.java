@@ -26,12 +26,14 @@ public class LongestPath {
                 {
                     double newDistance = vertex.getDistance1() + edge.getWeight();
 
-                    if( newDistance > v.getDistance1() ){
+                    if
+                    ( newDistance > v.getDistance1() ){
                         priorityQueue.add(v);
                         v.setDistance(newDistance);
                         v.setPredecessor(vertex);
                         priorityQueue.add(v);
-                    }
+
+                }
 
                 }
             }

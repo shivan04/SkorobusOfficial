@@ -1,17 +1,19 @@
-package sr.unasat;
+package sr.unasat.search;
+import sr.unasat.Edge;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vertex implements Comparable<Vertex> {
+public class Vertex1 implements Comparable<Vertex1> {
         private String id;
         private String name;
         private List<Edge> adjacenciesList;
         private boolean visited;
-        private Vertex predecessor;
+        private Vertex1 predecessor;
         private double distance = Double.MAX_VALUE;
         private double distance1 = Double.MIN_VALUE;
 
-        public Vertex(String id, String name) {
+        public Vertex1(String id, String name) {
                 this.id = id;
                 this.name = name;
                 this.adjacenciesList = new ArrayList<>();
@@ -50,11 +52,11 @@ public class Vertex implements Comparable<Vertex> {
                 this.visited = visited;
         }
 
-        public Vertex getPredecessor() {
+        public Vertex1 getPredecessor() {
                 return predecessor;
         }
 
-        public void setPredecessor(Vertex predecessor) {
+        public void setPredecessor(Vertex1 predecessor) {
                 this.predecessor = predecessor;
         }
 
@@ -110,7 +112,7 @@ public class Vertex implements Comparable<Vertex> {
                 if ((obj == null) || (obj.getClass() != this.getClass())) {
                         return flag;
                 } else {
-                        Vertex v = (Vertex) obj;
+                        Vertex1 v = (Vertex1) obj;
                         if ((v.getId() == this.getId()) && (v.getName() == this.getName())) {
                                 flag = true;
                         }
@@ -126,10 +128,10 @@ public class Vertex implements Comparable<Vertex> {
         }
 
         @Override
-        public int compareTo(Vertex otherVertex) {
-                return Double.compare(this.distance, otherVertex.getDistance());
+        public int compareTo(Vertex1 otherVertex) {
+               // return Double.compare(this.distance, otherVertex.getDistance());
 
-               //return Double.compare(this.distance1, otherVertex.getDistance1());
+               return Double.compare(this.distance1, otherVertex.getDistance1());
         }
 
 }

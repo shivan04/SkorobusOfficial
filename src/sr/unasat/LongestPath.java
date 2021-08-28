@@ -27,7 +27,7 @@ public class LongestPath {
                     double newDistance = vertex.getDistance1() + edge.getWeight();
 
                     if
-                    ( newDistance > v.getDistance1() ){
+                    (newDistance > v.getDistance1() ){
                         priorityQueue.add(v);
                         v.setDistance(newDistance);
                         v.setPredecessor(vertex);
@@ -41,15 +41,17 @@ public class LongestPath {
         }
     }
 
-    public List<Vertex> getShortestPathTo(Vertex targetVertex){
+    public static List<Vertex> getLongestPathTo(Vertex targetVertex){
         List<Vertex> path = new ArrayList<>();
 
         for(Vertex vertex=targetVertex;vertex != null ;vertex=vertex.getPredecessor()){
             path.add(vertex);
         }
-        //Collections.max(path);
+        Collections.max(path);
         Collections.reverse(path);
         return path;
 
     }
 }
+
+

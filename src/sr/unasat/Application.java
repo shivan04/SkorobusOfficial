@@ -22,29 +22,28 @@ public class Application {
         Graph graph = new Graph(true);
 
 
-
-        Vertex vertexA = new Vertex("A","PARANAM");
+        Vertex vertexA = new Vertex("A", "PARANAM");
         graph.addVertex(vertexA);
-        Vertex vertexB = new Vertex("B","LELYDORP");
+        Vertex vertexB = new Vertex("B", "LELYDORP");
         graph.addVertex(vertexB);
-        Vertex vertexC = new Vertex("C","HIGHWAY");
+        Vertex vertexC = new Vertex("C", "HIGHWAY");
         graph.addVertex(vertexC);
-        Vertex vertexD = new Vertex("D","PARAMARIBO");
+        Vertex vertexD = new Vertex("D", "PARAMARIBO");
         graph.addVertex(vertexD);
-        Vertex vertexE = new Vertex("E","KWARASAN");
+        Vertex vertexE = new Vertex("E", "KWARASAN");
         graph.addVertex(vertexE);
 
 
-        vertexA.addNeighbour(new Edge("A",5,vertexA,vertexB));
-        vertexA.addNeighbour(new Edge("A",6,vertexA,vertexC));
-        vertexB.addNeighbour(new Edge("B",6.50,vertexB,vertexD));
-        vertexB.addNeighbour(new Edge("B",4,vertexB,vertexC));
-        vertexC.addNeighbour(new Edge("C",3.50,vertexC,vertexD));
-        vertexC.addNeighbour(new Edge("C",5,vertexC,vertexE));
-        vertexE.addNeighbour(new Edge("E",5,vertexD,vertexE));
+        vertexA.addNeighbour(new Edge("A", 5, vertexA, vertexB));
+        vertexA.addNeighbour(new Edge("A", 6, vertexA, vertexC));
+        vertexB.addNeighbour(new Edge("B", 6.50, vertexB, vertexD));
+        vertexB.addNeighbour(new Edge("B", 4, vertexB, vertexC));
+        vertexC.addNeighbour(new Edge("C", 3.50, vertexC, vertexD));
+        vertexC.addNeighbour(new Edge("C", 5, vertexC, vertexE));
+        vertexE.addNeighbour(new Edge("E", 5, vertexD, vertexE));
 
 
-        graph.addEdge(vertexA, vertexB,graph.isDirected);
+        graph.addEdge(vertexA, vertexB, graph.isDirected);
         graph.addEdge(vertexA, vertexC, graph.isDirected);
         graph.addEdge(vertexB, vertexD, graph.isDirected);
         graph.addEdge(vertexB, vertexC, graph.isDirected);
@@ -82,12 +81,8 @@ public class Application {
  */
 
 
-
-
-//
-
         System.out.println("Output of Depth First Search using Non-Recursive DFS");
-         DFS(graph, new Vertex("C", "HIGHWAY"));
+        DFS(graph, new Vertex("B", "LELYDORP"));
 
 
         System.out.println("");
@@ -96,11 +91,11 @@ public class Application {
 
         System.out.println("Output of Breadth First Search: ");
         //Output: A B F E
-      BFS(graph, new Vertex("C", "HIGHWAY"));
+        BFS(graph, new Vertex("B", "LELYDORP"));
         System.out.println();
 
 
-
+//
 
 
         //Dijkstra
@@ -115,41 +110,60 @@ public class Application {
         System.out.println("Calculating minimum distance");
         System.out.println("======================================");
 
-        System.out.println("Minimum fare from "+vertexmain+" to LELYDORP: "+vertexB.getDistance());
-        System.out.println("Minimum fare from "+vertexmain+" to HIGHWAY: "+vertexC.getDistance());
-        System.out.println("Minimum fare from "+vertexmain+" to PARAMARIBO: "+vertexD.getDistance());
+        System.out.println("Minimum fare from " + vertexmain + " to LELYDORP: " + vertexB.getDistance());
+        System.out.println("Minimum fare from " + vertexmain + " to HIGHWAY: " + vertexC.getDistance());
+        System.out.println("Minimum fare from " + vertexmain + " to PARAMARIBO: " + vertexD.getDistance());
         //System.out.println("Minimum fare from PARANAM to KWARASAN: "+vertexE.getDistance());
-        System.out.println("Minimum fare from " +vertexmain+ " to KWARASAN: "+vertexE.getDistance());
+        System.out.println("Minimum fare from " + vertexmain + " to KWARASAN: " + vertexE.getDistance());
+
 
         System.out.println("=====================   =================");
         System.out.println("Calculating Paths");
         System.out.println("======================================");
 
-        System.out.println("Shortest route from "+vertexmain+" to LELYDORP: "+shortestPath.getShortestPathTo(vertexB));
-        System.out.println("Shortest route from "+vertexmain+ " to HIGHWAY: "+shortestPath.getShortestPathTo(vertexC));
-        System.out.println("Shortest route from "+vertexmain+" to PARAMARIBO: "+shortestPath.getShortestPathTo(vertexD));
-        System.out.println("Shortest route from "+vertexmain+" to KWARASAN: "+shortestPath.getShortestPathTo(vertexE));
-
+        System.out.println("Shortest route from " + vertexmain + " to LELYDORP: " + shortestPath.getShortestPathTo(vertexB));
+        System.out.println("Shortest route from " + vertexmain + " to HIGHWAY: " + shortestPath.getShortestPathTo(vertexC));
+        System.out.println("Shortest route from " + vertexmain + " to PARAMARIBO: " + shortestPath.getShortestPathTo(vertexD));
+        System.out.println("Shortest route from " + vertexmain + " to KWARASAN: " + shortestPath.getShortestPathTo(vertexE));
 
 
         System.out.println("======================================");
         System.out.println("======================================");
+// LONGEST PATH
+        LongestPath longestPath = new LongestPath();
+        longestPath.computeLongestPaths(vertexA);
+        Vertex vertexmain1 = vertexA;
+
+        System.out.println("Minimum fare from " + vertexmain1 + " to LELYDORP: " + vertexB.getDistance());
+        System.out.println("Minimum fare from " + vertexmain1 + " to HIGHWAY: " + vertexC.getDistance());
+        System.out.println("Minimum fare from " + vertexmain1 + " to PARAMARIBO: " + vertexD.getDistance());
+        //System.out.println("Minimum fare from PARANAM to KWARASAN: "+vertexE.getDistance());
+        System.out.println("Minimum fare from " + vertexmain1 + " to KWARASAN: " + vertexE.getDistance());
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Longest route from " + vertexmain1 + " to LELYDORP: " + LongestPath.getLongestPathTo(vertexB));
+        System.out.println("Longest route from " + vertexmain1 + " to HIGHWAY: " + LongestPath.getLongestPathTo(vertexC));
+        System.out.println("Longest route from " + vertexmain1 + " to PARAMARIBO: " + LongestPath.getLongestPathTo(vertexD));
+        System.out.println("Longest route from " + vertexmain1 + " to KWARASAN: " + LongestPath.getLongestPathTo(vertexE));
 
 
-
-        System.out.println("Maximum fare from "+vertexmain+ " to LELYDORP: "+vertexB.getDistance1());
-        System.out.println("Maximum fare from "+vertexmain+" to HIGHWAY: "+vertexC.getDistance1());
-        System.out.println("Maximum fare from "+vertexmain+" to PARAMARIBO: "+vertexD.getDistance1());
-        System.out.println("Maximum fare from "+vertexmain+" to KWARASAN: "+vertexE.getDistance());
 
 
     }
+
+
     public boolean isDirected() {
         return isDirected;
     }
+
     public void setDirected(boolean isDirected) {
         this.isDirected = isDirected;
     }
-
-
 }
+
+
+
+
+

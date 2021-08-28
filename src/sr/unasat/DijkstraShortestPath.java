@@ -27,8 +27,8 @@ public class DijkstraShortestPath {
                     double newDistance = vertex.getDistance() + edge.getWeight();
 
                     if
-                    //(newDistance < v.getDistance() ){
-                        (newDistance > v.getDistance1() ){
+                    (newDistance < v.getDistance() ){
+                      // (newDistance > v.getDistance1() ){
                         priorityQueue.add(v);
                         v.setDistance(newDistance);
                         v.setPredecessor(vertex);
@@ -47,7 +47,7 @@ public class DijkstraShortestPath {
         for(Vertex vertex=targetVertex;vertex != null ;vertex=vertex.getPredecessor()){
             path.add(vertex);
         }
-        //Collections.max(path);
+        Collections.max(path);
         Collections.reverse(path);
         return path;
 

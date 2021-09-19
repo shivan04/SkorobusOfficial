@@ -3,15 +3,13 @@ package sr.unasat;
 
 
 
-import java.util.List;
 
 
 import static sr.unasat.search.BreathFirstSearch.BFS;
 
 import static sr.unasat.search.DeptFirstSearch.DFS;
 
-import jdk.swing.interop.SwingInterOpUtils;
-import sr.unasat.Register.*;
+
 
 public class Application {
 
@@ -90,7 +88,7 @@ public class Application {
 
 
         System.out.println("Output of Breadth First Search: ");
-        //Output: A B F E
+
         BFS(graph, new Vertex("B", "LELYDORP"));
         System.out.println();
 

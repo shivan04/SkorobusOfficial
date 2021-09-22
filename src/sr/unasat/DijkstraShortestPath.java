@@ -28,7 +28,7 @@ public class DijkstraShortestPath {
 
                     if
                     (newDistance < v.getDistance() ){
-                      // (newDistance > v.getDistance1() ){
+                    //  (newDistance > v.getDistance1() ){
                         priorityQueue.add(v);
                         v.setDistance(newDistance);
                         v.setPredecessor(vertex);

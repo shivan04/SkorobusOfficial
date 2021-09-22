@@ -18,6 +18,8 @@ public class Register {
         graph.addVertex(vertexD);
         Vertex vertexE = new Vertex("E", "KWARASAN");
         graph.addVertex(vertexE);
+        Vertex vertexG = new Vertex("G", "LEIDING");
+        graph.addVertex(vertexG);
 
 
         vertexA.addNeighbour(new Edge("A", 5, vertexA, vertexB));
@@ -27,6 +29,8 @@ public class Register {
         vertexC.addNeighbour(new Edge("C", 3.50, vertexC, vertexD));
         vertexC.addNeighbour(new Edge("C", 5, vertexC, vertexE));
         vertexE.addNeighbour(new Edge("E", 5, vertexD, vertexE));
+        vertexG.addNeighbour(new Edge("G", 3.50, vertexD, vertexG));
+
 
 
         graph.addEdge(vertexA, vertexB, graph.isDirected);
@@ -36,6 +40,7 @@ public class Register {
         graph.addEdge(vertexC, vertexD, graph.isDirected);
         graph.addEdge(vertexD, vertexE, graph.isDirected);
         graph.addEdge(vertexC, vertexE, graph.isDirected);
+        graph.addEdge(vertexD, vertexG, graph.isDirected);
 
     }
 

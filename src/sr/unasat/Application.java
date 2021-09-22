@@ -5,9 +5,12 @@ package sr.unasat;
 
 
 
+import java.util.List;
+
 import static sr.unasat.search.BreathFirstSearch.BFS;
 
 import static sr.unasat.search.DeptFirstSearch.DFS;
+import static sr.unasat.Register.main;
 
 
 
@@ -31,6 +34,11 @@ public class Application {
         Vertex vertexE = new Vertex("E", "KWARASAN");
         graph.addVertex(vertexE);
 
+//   ADD VERTEX
+      //  Vertex vertexF = new Vertex("F", "LEIDING");
+     //   graph.addVertex(vertexF);
+
+
 
         vertexA.addNeighbour(new Edge("A", 5, vertexA, vertexB));
         vertexA.addNeighbour(new Edge("A", 6, vertexA, vertexC));
@@ -39,6 +47,9 @@ public class Application {
         vertexC.addNeighbour(new Edge("C", 3.50, vertexC, vertexD));
         vertexC.addNeighbour(new Edge("C", 5, vertexC, vertexE));
         vertexE.addNeighbour(new Edge("E", 5, vertexD, vertexE));
+
+      //  vertexD.addNeighbour(new Edge("F", 3.50, vertexD, vertexF));
+       // vertexE.addNeighbour(new Edge("F", 3.50, vertexE, vertexF));
 
 
         graph.addEdge(vertexA, vertexB, graph.isDirected);
@@ -49,38 +60,19 @@ public class Application {
         graph.addEdge(vertexD, vertexE, graph.isDirected);
         graph.addEdge(vertexC, vertexE, graph.isDirected);
 
+       // graph.addEdge(vertexE, vertexF, graph.isDirected);
+        //graph.addEdge(vertexD, vertexF, graph.isDirected);
+
+
+
+
 
 // SOUT BEGINT VAN AF HIER !!!!!
 
         graph.printGraph();
 
-
-
-/*
-       System.out.println("Check if following vertices are connected");
-        if(graph.isConnected(vertexA, vertexB))
-            System.out.println(vertexA+" and "+vertexB+" Are connected");
-        else
-            System.out.println(vertexA+" and "+vertexB+" Are not connected");
-
-        if(graph.isConnected(vertexA, vertexC))
-            System.out.println(vertexA+" and "+vertexC+" Are connected");
-        else
-         //   System.out.println("PARANAM and HIGHWAY  are NOT connected.");
-        System.out.println(vertexA+" and "+vertexC+" Are not connected");
-
-        //Call getAdjacentVertex() to get neighboring nodes
-        List<Vertex> temp = graph.getAdjacentVertex(new Vertex("A", "BOG"));
-        System.out.println("Here are neighboring nodes of BOG: ");
-        for(Vertex ver : temp) {
-            System.out.println(ver);
-        }
-
- */
-
-
         System.out.println("Output of Depth First Search using Non-Recursive DFS");
-        DFS(graph, new Vertex("B", "LELYDORP"));
+        DFS(graph, new Vertex("A", "PARANAM"));
 
 
         System.out.println("");
@@ -114,6 +106,8 @@ public class Application {
         //System.out.println("Minimum fare from PARANAM to KWARASAN: "+vertexE.getDistance());
         System.out.println("Minimum fare from " + vertexmain + " to KWARASAN: " + vertexE.getDistance());
 
+       // System.out.println("Minimum fare from " + vertexmain + " to LEIDING: " + vertexF.getDistance());
+
 
         System.out.println("=====================   =================");
         System.out.println("Calculating Paths");
@@ -124,10 +118,16 @@ public class Application {
         System.out.println("Shortest route from " + vertexmain + " to PARAMARIBO: " + shortestPath.getShortestPathTo(vertexD));
         System.out.println("Shortest route from " + vertexmain + " to KWARASAN: " + shortestPath.getShortestPathTo(vertexE));
 
+        //System.out.println("Shortest route from " + vertexmain + " to LEIDING: " + shortestPath.getShortestPathTo(vertexF));
+
 
         System.out.println("======================================");
         System.out.println("======================================");
+
+
+
 // LONGEST PATH
+        /*
         LongestPath longestPath = new LongestPath();
         longestPath.computeLongestPaths(vertexA);
         Vertex vertexmain1 = vertexA;
@@ -147,6 +147,8 @@ public class Application {
         System.out.println("Longest route from " + vertexmain1 + " to KWARASAN: " + LongestPath.getLongestPathTo(vertexE));
 
 
+
+         */
 
 
     }

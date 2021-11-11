@@ -5,12 +5,12 @@ package sr.unasat;
 
 
 
-import java.util.List;
+
 
 import static sr.unasat.search.BreathFirstSearch.BFS;
 
 import static sr.unasat.search.DeptFirstSearch.DFS;
-import static sr.unasat.Register.main;
+
 
 
 
@@ -111,6 +111,8 @@ public class Application {
        // System.out.println("Minimum fare from " + vertexmain + " to LEIDING: " + vertexF.getDistance());
 
 
+
+
         System.out.println("=====================   =================");
         System.out.println("Calculating Paths");
         System.out.println("======================================");
@@ -122,34 +124,33 @@ public class Application {
 
         //System.out.println("Shortest route from " + vertexmain + " to LEIDING: " + shortestPath.getShortestPathTo(vertexF));
 
-
-        System.out.println("======================================");
-        System.out.println("======================================");
-
-
-
+        //--------------------------------------------------------------------------------------//
 // LONGEST PATH
-/*
-        LongestPath longestPath = new LongestPath();
-        longestPath.computeLongestPaths(vertexA);
-        Vertex vertexmain1 = vertexA;
+        /*
+        System.out.println("Maximum fare from " + vertexmain + " to LELYDORP: " + vertexB.getDistance());
+        System.out.println("Maximum fare from " + vertexmain + " to HIGHWAY: " + vertexC.getDistance());
+        System.out.println("Maximum fare from " + vertexmain + " to PARAMARIBO: " + vertexD.getDistance());
+        //System.out.println("Maximum fare from PARANAM to KWARASAN: "+vertexE.getDistance());
+        System.out.println("Maximum fare from " + vertexmain + " to KWARASAN: " + vertexE.getDistance());
 
-        System.out.println("Minimum fare from " + vertexmain1 + " to LELYDORP: " + vertexB.getDistance());
-        System.out.println("Minimum fare from " + vertexmain1 + " to HIGHWAY: " + vertexC.getDistance());
-        System.out.println("Minimum fare from " + vertexmain1 + " to PARAMARIBO: " + vertexD.getDistance());
-        //System.out.println("Minimum fare from PARANAM to KWARASAN: "+vertexE.getDistance());
-        System.out.println("Minimum fare from " + vertexmain1 + " to KWARASAN: " + vertexE.getDistance());
+        System.out.println("=====================   =================");
+        System.out.println("Calculating Paths");
+        System.out.println("======================================");
 
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Longest route from " + vertexmain1 + " to LELYDORP: " + LongestPath.getLongestPathTo(vertexB));
-        System.out.println("Longest route from " + vertexmain1 + " to HIGHWAY: " + LongestPath.getLongestPathTo(vertexC));
-        System.out.println("Longest route from " + vertexmain1 + " to PARAMARIBO: " + LongestPath.getLongestPathTo(vertexD));
-        System.out.println("Longest route from " + vertexmain1 + " to KWARASAN: " + LongestPath.getLongestPathTo(vertexE));
+        System.out.println("Longest route from " + vertexmain + " to LELYDORP: " + LongestPath.getLongestPathTo(vertexB));
+        System.out.println("Longest route from " + vertexmain + " to HIGHWAY: " + LongestPath.getLongestPathTo(vertexC));
+        System.out.println("Longest route from " + vertexmain + " to PARAMARIBO: " + LongestPath.getLongestPathTo(vertexD));
+        System.out.println("Longest route from " + vertexmain + " to KWARASAN: " + LongestPath.getLongestPathTo(vertexE));
 
 
-*/
+
+
+         */
+        System.out.println("======================================");
+        System.out.println("======================================");
+
+
+
 
 
 

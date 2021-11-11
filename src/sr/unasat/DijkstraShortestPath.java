@@ -21,14 +21,14 @@ public class DijkstraShortestPath {
             for(Edge edge : vertex.getAdjacenciesList()){
 
                 Vertex v = edge.getTargetVertex();
-            //    if(!v.isVisited())
+
                 if (!v.isVisited())
                 {
                     double newDistance = vertex.getDistance() + edge.getWeight();
 
                     if
-                    //(newDistance < v.getDistance() ){
-                     (newDistance > v.getDistance1() ){
+                    (newDistance < v.getDistance() ){
+                   //  (newDistance > v.getDistance1() ){
                         priorityQueue.add(v);
                         v.setDistance(newDistance);
                         v.setPredecessor(vertex);

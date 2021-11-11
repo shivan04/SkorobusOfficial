@@ -71,7 +71,7 @@ public class Application {
 
         graph.printGraph();
 
-        System.out.println("Output of Depth First Search using Non-Recursive DFS");
+        System.out.println("Output of Depth First Search ");
         DFS(graph, new Vertex("A", "PARANAM"));
 
 
@@ -89,6 +89,8 @@ public class Application {
 
 
         //Dijkstra
+
+
         DijkstraShortestPath shortestPath = new DijkstraShortestPath();
         shortestPath.computeShortestPaths(vertexA);
         Vertex vertexmain = vertexA;
@@ -127,7 +129,7 @@ public class Application {
 
 
 // LONGEST PATH
-        /*
+/*
         LongestPath longestPath = new LongestPath();
         longestPath.computeLongestPaths(vertexA);
         Vertex vertexmain1 = vertexA;
@@ -147,8 +149,8 @@ public class Application {
         System.out.println("Longest route from " + vertexmain1 + " to KWARASAN: " + LongestPath.getLongestPathTo(vertexE));
 
 
+*/
 
-         */
 
 
     }

@@ -8,12 +8,12 @@ public class Graph {
     public boolean isDirected;
     private List<Vertex> vertex;
     private List<Edge> adjacenciesList;
-    @SuppressWarnings("unused")
+
     private int numberOfVertices;
-    @SuppressWarnings("unused")
+
     private int numberOfEdges;
 
-    // While instantiating this graph, user needs to input the type of the Graph - Directed or Undirected
+    // aangeven als het een directed of undirected graph is
     public Graph(boolean isDirected) {
         this.vertex = new LinkedList<>();
         this.adjacenciesList = new LinkedList<Edge>();
@@ -34,7 +34,7 @@ public class Graph {
         adjacenciesList.add(newEdge);
         this.numberOfEdges++;
         if(!isDirected) {
-            addEdge(b, a, true); //Recursive call to addEdge method if is a non-directed graph
+            addEdge(b, a, true); //recursvie call als it niet directedis
         }
     }
 
@@ -54,11 +54,7 @@ public class Graph {
         return connected;
     }
 
-    /*
-     * This method finds the neighboring nodes connected to a given vertex.
-     * This is a very important method to traverse a Graph used in BFS and DFS algorithms.
-     *
-     */
+
     public List<Vertex> getAdjacentVertex(Vertex v) {
         List<Vertex> list = new LinkedList<Vertex>();
         if((v != null) && (adjacenciesList != null)) {

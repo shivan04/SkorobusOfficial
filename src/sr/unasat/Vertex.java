@@ -98,7 +98,7 @@ public class Vertex implements Comparable<Vertex> {
 
         @Override
         public int hashCode() {
-                int hashValue = 3;
+                int hashValue = 1;
                 final int primeFactor = 23;
                 hashValue = hashValue * primeFactor + this.id.hashCode() + this.name.hashCode();
                 return hashValue;

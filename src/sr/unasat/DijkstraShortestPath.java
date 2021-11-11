@@ -14,7 +14,7 @@ public class DijkstraShortestPath {
         sourceVertex.setVisited(true);
 
         while( !priorityQueue.isEmpty() ){
-            // Getting the minimum distance vertex from priority queue
+            // min distance
             Vertex vertex= priorityQueue.poll();
            // Vertex actualVertex = priorityQueue.poll();
 
@@ -27,8 +27,8 @@ public class DijkstraShortestPath {
                     double newDistance = vertex.getDistance() + edge.getWeight();
 
                     if
-                    (newDistance < v.getDistance() ){
-                    //  (newDistance > v.getDistance1() ){
+                    //(newDistance < v.getDistance() ){
+                     (newDistance > v.getDistance1() ){
                         priorityQueue.add(v);
                         v.setDistance(newDistance);
                         v.setPredecessor(vertex);
